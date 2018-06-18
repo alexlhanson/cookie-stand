@@ -15,29 +15,44 @@
 var collegePence = {
   minCust: 23,
   maxCust: 65,
-  avgPSales: 6.3
+  avgPSales: 6.3,
+  randCust: function (){
+    Math.floor(Math.random() * (maxCust-minCust) + minCust);
+  },
 };
 
 var chandler14th = {
   minCust: 3,
   maxCust: 24,
-  avgPSales: 1.2
+  avgPSales: 1.2,
+  randCust: function (){
+    Math.floor(Math.random() * (maxCust-minCust) + minCust);
+  },
 };
 
 var fresno14th = {
   minCust: 11,
   maxCust: 38,
-  avgPSales: 3.7
+  avgPSales: 3.7,
+  randCust: function (){
+    Math.floor(Math.random() * (maxCust-minCust) + minCust);
+  },
 };
 
 var minnesotaBond = {
   minCust: 20,
   maxCust: 38,
-  avgPSales: 2.3
+  avgPSales: 2.3,
+  randCust: function (){
+    Math.floor(Math.random() * (maxCust-minCust) + minCust);
+  },
 };
 
 var neffWilliamson = {
   minCust: 2,
   maxCust: 16,
-  avgPSales: 4.6
+  avgPSales: 4.6,
+  randCust: function (){
+    Math.floor(Math.random() * (maxCust-minCust) + minCust);
+  },
 };
