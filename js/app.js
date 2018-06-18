@@ -18,6 +18,7 @@ var locations = [];
 //location objects - literal notation for each location and data associated[]
 
 var collegePence = {
+  name: 'College and Pence',
   minCust: 23,
   maxCust: 65,
   avgPSales: 6.3,
@@ -25,6 +26,7 @@ var collegePence = {
 };
 
 var chandler14th = {
+  name: 'Chandler and 14th',
   minCust: 3,
   maxCust: 24,
   avgPSales: 1.2,
@@ -32,6 +34,7 @@ var chandler14th = {
 };
 
 var fresno14th = {
+  name: 'Fresno and 14th',
   minCust: 11,
   maxCust: 38,
   avgPSales: 3.7,
@@ -39,6 +42,7 @@ var fresno14th = {
 };
 
 var minnesotaBond = {
+  name: 'Minnesota and Bond',
   minCust: 20,
   maxCust: 38,
   avgPSales: 2.3,
@@ -46,6 +50,7 @@ var minnesotaBond = {
 };
 
 var neffWilliamson = {
+  name: 'Neff and Williamson',
   minCust: 2,
   maxCust: 16,
   avgPSales: 4.6,
@@ -89,6 +94,14 @@ neffWilliamson.cookieCalculator = function (){
   }
 };
 
+collegePence.render = function (){
+  var h1El = document.createElement('h1');
+  h1El.textContent(this.name);
+  
+  this.cookieCalculator();
+  
+};
+
 //push objects to locations array
 locations.push(collegePence);
 locations.push(chandler14th);
@@ -96,4 +109,8 @@ locations.push(fresno14th);
 locations.push(minnesotaBond);
 locations.push(neffWilliamson);
 
+var renderCollegePence = function(){
+  collegePence.cookieCalculator();
+  document.get
+};
   
