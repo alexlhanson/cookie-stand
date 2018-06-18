@@ -12,9 +12,10 @@
 
 // Calculating the sum of these hourly totals; your output for each location should look like this:
 
-//Array for locations
+//Array for locations and elements
 var locations = [];
-
+var locationListSection = document.getElementById('salmonCookieStands');
+console.log(locationListSection);
 //location objects - literal notation for each location and data associated[]
 
 var collegePence = {
@@ -60,47 +61,63 @@ var neffWilliamson = {
 //calculate cookies per hour
 
 collegePence.cookieCalculator = function (){
-  for (var hours = 0; hours < 16; hours++){
+  for (var hours = 0; hours < 15; hours++){
     var randCust = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
     this.cookiesPHour.push(Math.floor(randCust * this.avgPSales));
   }
 };
 
 chandler14th.cookieCalculator = function (){
-  for (var hours = 0; hours < 16; hours++){
+  for (var hours = 0; hours < 15; hours++){
     var randCust = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
     this.cookiesPHour.push(Math.floor(randCust * this.avgPSales));
   }
 };
 
 fresno14th.cookieCalculator = function (){
-  for (var hours = 0; hours < 16; hours++){
+  for (var hours = 0; hours < 15; hours++){
     var randCust = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
     this.cookiesPHour.push(Math.floor(randCust * this.avgPSales));
   }
 };
 
 minnesotaBond.cookieCalculator = function (){
-  for (var hours = 0; hours < 16; hours++){
+  for (var hours = 0; hours < 15; hours++){
     var randCust = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
     this.cookiesPHour.push(Math.floor(randCust * this.avgPSales));
   }
 };
 
 neffWilliamson.cookieCalculator = function (){
-  for (var hours = 0; hours < 16; hours++){
+  for (var hours = 0; hours < 15; hours++){
     var randCust = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
     this.cookiesPHour.push(Math.floor(randCust * this.avgPSales));
   }
 };
 
+//Rendering method for each location
 collegePence.render = function (){
-  var h1El = document.createElement('h1');
-  h1El.textContent(this.name);
-  
+  var h2El = document.createElement('h2');
+  h2El.textContent = this.name;
+  console.log(locationListSection);
+  locationListSection.appendChild(h2El);
+
+  var ulEl = document.createElement('ul');
+  h2El.appendChild(ulEl);
+
   this.cookieCalculator();
-  
+  for (var i = 0; i < this.cookiesPHour.length; i++) {
+    var liEl = document.createElement('li');
+    if (i < 7){
+      liEl.textContent = (i + 6) + ' am : ' + this.cookiesPHour[i] + ' cookies';
+    } else (liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies');
+    ulEl.appendChild(liEl);
+  }
+
+  calcTotal
 };
+
+collegePence.render();
 
 //push objects to locations array
 locations.push(collegePence);
