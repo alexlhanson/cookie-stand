@@ -5,6 +5,7 @@ var locations = [];
 var locationListSection = document.getElementById('salmonCookieStands');
 //location objects - literal notation for each location and data associated[]
 
+
 var collegePence = {
   name: 'College and Pence',
   minCust: 23,
@@ -46,7 +47,19 @@ var neffWilliamson = {
   cookiesPHour:[],
 };
 
-//calculate cookies per hour
+// calculate cookies per hour
+
+//Cookie Stand Object constructor
+function Stand(name, minCust, maxCust, avgPSales) {
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgPSales = avgPSales;
+  this.cookiesPHour = [];
+
+  locations.push(this);
+}
+
 
 
 collegePence.cookieCalculator = function (){
