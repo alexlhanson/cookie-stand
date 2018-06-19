@@ -1,8 +1,6 @@
 body {
   background-color: #D0C9C2;
-  max-width: 960px;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin: 0;
 }
 
 li{
@@ -11,6 +9,26 @@ li{
 
 h1 h2 p {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+
+header {
+  background-color: #C6915D;
+  margin: 0px;
+  margin: auto;
+  text-align: center;
+}
+
+table {
+  border: 3px solid black;
+}
+
+td {
+  border: 1px solid black;
+}
+
+th {
+  margin: 1px;
 }
 
 #navbar {
@@ -21,5 +39,18 @@ h1 h2 p {
   display: inline;
   list-style-type: none;
   font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
 }
 
+#main {
+  max-width: 960px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+#salmonCookieStands th {
+  background-color: #A46845;
+  color:white;
+}
