@@ -24,6 +24,7 @@ var collegePence = {
   maxCust: 65,
   avgPSales: 6.3,
   cookiesPHour:[],
+  totalCookies: 0,
 };
 
 var chandler14th = {
@@ -60,10 +61,13 @@ var neffWilliamson = {
 
 //calculate cookies per hour
 
+
 collegePence.cookieCalculator = function (){
   for (var hours = 0; hours < 15; hours++){
     var randCust = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
     this.cookiesPHour.push(Math.floor(randCust * this.avgPSales));
+    // this.cookiesTotal += parseInt(Math.floor(randCust * this.avgPSales));
+    // console.log(this.cookiesTotal);
   }
 };
 
@@ -95,7 +99,7 @@ neffWilliamson.cookieCalculator = function (){
   }
 };
 
-//Rendering method for each location
+//Rendering method - Adds h2, and ul/li elements to append cookiesPerHour and total cookiesfor the location
 collegePence.render = function (){
   var h2El = document.createElement('h2');
   h2El.textContent = this.name;
@@ -106,15 +110,25 @@ collegePence.render = function (){
   h2El.appendChild(ulEl);
 
   this.cookieCalculator();
+  var calcTotal = 0;
+
   for (var i = 0; i < this.cookiesPHour.length; i++) {
     var liEl = document.createElement('li');
     if (i < 7){
       liEl.textContent = (i + 6) + ' am : ' + this.cookiesPHour[i] + ' cookies';
     } else (liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies');
     ulEl.appendChild(liEl);
-  }
 
-  calcTotal
+    // //calculate the total cookies
+    calcTotal = parseInt(this.cookiesPHour[i]) + calcTotal;
+    console.log(calcTotal);
+
+
+  }
+  
+  //append total cookies
+  liEl.textContent = 'total : ' + calcTotal + ' cookies';
+  ulEl.appendChild(liEl);
 };
 
 collegePence.render();
@@ -125,9 +139,3 @@ locations.push(chandler14th);
 locations.push(fresno14th);
 locations.push(minnesotaBond);
 locations.push(neffWilliamson);
-
-var renderCollegePence = function(){
-  collegePence.cookieCalculator();
-  document.get
-};
-  
