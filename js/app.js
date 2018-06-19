@@ -1,21 +1,8 @@
 'use strict';
 
-// Stores the min/max hourly customers, and the average cookies per customer, in object properties
-
-// Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
-
-// Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
-
-// Store the results for each location in a separate array... perhaps as a property of the object representing that location
-
-// Display the values of each array as unordered lists in the browser
-
-// Calculating the sum of these hourly totals; your output for each location should look like this:
-
 //Array for locations and elements
 var locations = [];
 var locationListSection = document.getElementById('salmonCookieStands');
-console.log(locationListSection);
 //location objects - literal notation for each location and data associated[]
 
 var collegePence = {
@@ -66,8 +53,6 @@ collegePence.cookieCalculator = function (){
   for (var hours = 0; hours < 15; hours++){
     var randCust = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
     this.cookiesPHour.push(Math.floor(randCust * this.avgPSales));
-    // this.cookiesTotal += parseInt(Math.floor(randCust * this.avgPSales));
-    // console.log(this.cookiesTotal);
   }
 };
 
@@ -99,11 +84,10 @@ neffWilliamson.cookieCalculator = function (){
   }
 };
 
-//Rendering method - Adds h2, and ul/li elements to append cookiesPerHour and total cookiesfor the location
+//Rendering method - Adds h2, and ul/li elements to append cookiesPerHour and total cookies for the collge and Pence location
 collegePence.render = function (){
   var h2El = document.createElement('h2');
   h2El.textContent = this.name;
-  console.log(locationListSection);
   locationListSection.appendChild(h2El);
 
   var ulEl = document.createElement('ul');
@@ -121,17 +105,124 @@ collegePence.render = function (){
 
     // //calculate the total cookies
     calcTotal = parseInt(this.cookiesPHour[i]) + calcTotal;
-    console.log(calcTotal);
-
-
   }
   
   //append total cookies
-  liEl.textContent = 'total : ' + calcTotal + ' cookies';
+  liEl.textContent = 'Total : ' + calcTotal + ' cookies';
   ulEl.appendChild(liEl);
 };
 
-collegePence.render();
+//Rendering method - Adds h2, and ul/li elements to append cookiesPerHour and total cookies for the collge and Pence location
+chandler14th.render = function (){
+  var h2El = document.createElement('h2');
+  h2El.textContent = this.name;
+  locationListSection.appendChild(h2El);
+
+  var ulEl = document.createElement('ul');
+  h2El.appendChild(ulEl);
+
+  this.cookieCalculator();
+  var calcTotal = 0;
+
+  for (var i = 0; i < this.cookiesPHour.length; i++) {
+    var liEl = document.createElement('li');
+    if (i < 7){
+      liEl.textContent = (i + 6) + ' am : ' + this.cookiesPHour[i] + ' cookies';
+    } else (liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies');
+    ulEl.appendChild(liEl);
+
+    // //calculate the total cookies
+    calcTotal = parseInt(this.cookiesPHour[i]) + calcTotal;
+  }
+  
+  //append total cookies
+  liEl.textContent = 'Total : ' + calcTotal + ' cookies';
+  ulEl.appendChild(liEl);
+};
+
+//Rendering method - Adds h2, and ul/li elements to append cookiesPerHour and total cookies for the collge and Pence location
+fresno14th.render = function (){
+  var h2El = document.createElement('h2');
+  h2El.textContent = this.name;
+  locationListSection.appendChild(h2El);
+
+  var ulEl = document.createElement('ul');
+  h2El.appendChild(ulEl);
+
+  this.cookieCalculator();
+  var calcTotal = 0;
+
+  for (var i = 0; i < this.cookiesPHour.length; i++) {
+    var liEl = document.createElement('li');
+    if (i < 7){
+      liEl.textContent = (i + 6) + ' am : ' + this.cookiesPHour[i] + ' cookies';
+    } else (liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies');
+    ulEl.appendChild(liEl);
+
+    // //calculate the total cookies
+    calcTotal = parseInt(this.cookiesPHour[i]) + calcTotal;
+  }
+  
+  //append total cookies
+  liEl.textContent = 'Total : ' + calcTotal + ' cookies';
+  ulEl.appendChild(liEl);
+};
+
+//Rendering method - Adds h2, and ul/li elements to append cookiesPerHour and total cookies for the collge and Pence location
+minnesotaBond.render = function (){
+  var h2El = document.createElement('h2');
+  h2El.textContent = this.name;
+  locationListSection.appendChild(h2El);
+
+  var ulEl = document.createElement('ul');
+  h2El.appendChild(ulEl);
+
+  this.cookieCalculator();
+  var calcTotal = 0;
+
+  for (var i = 0; i < this.cookiesPHour.length; i++) {
+    var liEl = document.createElement('li');
+    if (i < 7){
+      liEl.textContent = (i + 6) + ' am : ' + this.cookiesPHour[i] + ' cookies';
+    } else (liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies');
+    ulEl.appendChild(liEl);
+
+    // //calculate the total cookies
+    calcTotal = parseInt(this.cookiesPHour[i]) + calcTotal;
+  }
+  
+  //append total cookies
+  liEl.textContent = 'Total : ' + calcTotal + ' cookies';
+  ulEl.appendChild(liEl);
+};
+
+//Rendering method - Adds h2, and ul/li elements to append cookiesPerHour and total cookies for the collge and Pence location
+neffWilliamson.render = function (){
+  var h2El = document.createElement('h2');
+  h2El.textContent = this.name;
+  locationListSection.appendChild(h2El);
+
+  var ulEl = document.createElement('ul');
+  h2El.appendChild(ulEl);
+
+  this.cookieCalculator();
+  var calcTotal = 0;
+
+  for (var i = 0; i < this.cookiesPHour.length; i++) {
+    var liEl = document.createElement('li');
+    if (i < 7){
+      liEl.textContent = (i + 6) + ' am : ' + this.cookiesPHour[i] + ' cookies';
+    } else (liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies');
+    ulEl.appendChild(liEl);
+
+    // //calculate the total cookies
+    calcTotal = parseInt(this.cookiesPHour[i]) + calcTotal;
+  }
+  
+  //append total cookies
+  liEl.textContent = 'Total : ' + calcTotal + ' cookies';
+  ulEl.appendChild(liEl);
+};
 
 //push objects to locations array
 locations.push(collegePence);
@@ -139,3 +230,9 @@ locations.push(chandler14th);
 locations.push(fresno14th);
 locations.push(minnesotaBond);
 locations.push(neffWilliamson);
+
+//render locations
+
+for (var loc in locations) {
+  locations[loc].render();
+}
