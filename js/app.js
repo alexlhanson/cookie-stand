@@ -198,10 +198,12 @@ minnesotaBond.render = function (){
 
 //Rendering method - Adds h2, and ul/li elements to append cookiesPerHour and total cookies for the collge and Pence location
 neffWilliamson.render = function (){
+  //location header
   var h2El = document.createElement('h2');
   h2El.textContent = this.name;
   locationListSection.appendChild(h2El);
 
+  //ul for the list of cookies
   var ulEl = document.createElement('ul');
   h2El.appendChild(ulEl);
 
