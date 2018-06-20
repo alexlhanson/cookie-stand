@@ -13,7 +13,7 @@ h1 h2 p {
 }
 
 header {
-  background-color: #C6915D;
+  background-color:white;
   margin: 0px;
   margin: auto;
   text-align: center;
@@ -27,20 +27,19 @@ td th {
   border: 1px solid black;
 }
 
-#navbar {
-  background-color: #A46845;
+.navbar {
+  background-color: #C6915D;
 }
 
-#navbar>li {
+.navbar>li {
   display: inline;
   list-style-type: none;
   font-family: 'Oswald', sans-serif;
   font-size: 1.5em;
-  margin-left: 1.5em;
-  margin-right: 1.5em;
+  margin: 0em 1.5em 0em 1.5em;
 }
 
-#main {
+.main {
   max-width: 960px;
   margin-left: 15%;
   margin-right: 15%;
@@ -50,4 +49,15 @@ td th {
   background-color: #A46845;
   color:white;
   border: 1px solid black;
+}
+
+/* Images */
+
+.salmon {
+  float:left;
+  max-height: 1.5em;
+}
+
+.logo {
+  margin-bottom: 0px;
 }
