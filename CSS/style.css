@@ -23,12 +23,8 @@ table {
   border: 3px solid black;
 }
 
-td {
+td th {
   border: 1px solid black;
-}
-
-th {
-  margin: 1px;
 }
 
 #navbar {
@@ -53,4 +49,5 @@ th {
 #salmonCookieStands th {
   background-color: #A46845;
   color:white;
+  border: 1px solid black;
 }
