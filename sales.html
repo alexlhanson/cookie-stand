@@ -32,11 +32,33 @@
   </header>
   <div class="main">
     
-    <h1>sales</h1>
+    <h1>Sales by Cookie Stand</h1>
   
     <section>
       <table id="salmonCookieStands"></table>
     </section>
+    <form id="newStandNode">
+      
+      <fieldset id="formFieldset">
+        <legend id="formLegend">Add additional stand locations</legend>
+
+          <label for="stand">Cross-streets for the new stand</label>
+          <input name="stand" type="text"/>
+
+          <label for="formMinCust">Smallest number of customers each hour</label>
+          <input name="formMinCust" type="number"/>
+
+          <label for="formMaxCust">Largest number of customers each hour</label>
+          <input name="formMaxCust" type="number"/>
+
+          <label for="formAvgSale">Average number of cookies for each customer</label>
+          <input name="formAvgSale" type="number"/>
+
+          <button type="submit">Add Stand</button>
+
+      </fieldset>
+
+    </form>
 
   </div>
 

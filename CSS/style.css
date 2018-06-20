@@ -12,6 +12,11 @@ h1 h2 p {
   text-align: center;
 }
 
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
 header {
   background-color:white;
   margin: 0px;
@@ -25,6 +30,15 @@ table {
 
 td th {
   border: 1px solid black;
+}
+
+label { 
+  display: block
+}
+
+fieldset {
+  margin-top: 5em;
+  display: inline-block;
 }
 
 .navbar {
