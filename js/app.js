@@ -47,8 +47,6 @@ var neffWilliamson = {
 };
 
 //calculate cookies per hour
-
-
 collegePence.cookieCalculator = function (){
   for (var hours = 0; hours < 15; hours++){
     var randCust = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
@@ -95,19 +93,22 @@ collegePence.render = function (){
 
   this.cookieCalculator();
   var calcTotal = 0;
+  var liEl = document.createElement('li');
 
   for (var i = 0; i < this.cookiesPHour.length; i++) {
-    var liEl = document.createElement('li');
+    liEl = document.createElement('li');
     if (i < 7){
       liEl.textContent = (i + 6) + ' am : ' + this.cookiesPHour[i] + ' cookies';
-    } else (liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies');
+    }else {
+      liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies';
+    }
     ulEl.appendChild(liEl);
 
     // //calculate the total cookies
     calcTotal = parseInt(this.cookiesPHour[i]) + calcTotal;
   }
-  
   //append total cookies
+  liEl = document.createElement('li');
   liEl.textContent = 'Total : ' + calcTotal + ' cookies';
   ulEl.appendChild(liEl);
 };
@@ -123,19 +124,22 @@ chandler14th.render = function (){
 
   this.cookieCalculator();
   var calcTotal = 0;
+  var liEl = document.createElement('li');
 
   for (var i = 0; i < this.cookiesPHour.length; i++) {
-    var liEl = document.createElement('li');
+    liEl = document.createElement('li');
     if (i < 7){
       liEl.textContent = (i + 6) + ' am : ' + this.cookiesPHour[i] + ' cookies';
-    } else (liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies');
+    }else {
+      liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies';
+    }
     ulEl.appendChild(liEl);
 
     // //calculate the total cookies
     calcTotal = parseInt(this.cookiesPHour[i]) + calcTotal;
   }
-  
   //append total cookies
+  liEl = document.createElement('li');
   liEl.textContent = 'Total : ' + calcTotal + ' cookies';
   ulEl.appendChild(liEl);
 };
@@ -151,19 +155,22 @@ fresno14th.render = function (){
 
   this.cookieCalculator();
   var calcTotal = 0;
+  var liEl = document.createElement('li');
 
   for (var i = 0; i < this.cookiesPHour.length; i++) {
-    var liEl = document.createElement('li');
+    liEl = document.createElement('li');
     if (i < 7){
       liEl.textContent = (i + 6) + ' am : ' + this.cookiesPHour[i] + ' cookies';
-    } else (liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies');
+    }else {
+      liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies';
+    }
     ulEl.appendChild(liEl);
 
     // //calculate the total cookies
     calcTotal = parseInt(this.cookiesPHour[i]) + calcTotal;
   }
-  
   //append total cookies
+  liEl = document.createElement('li');
   liEl.textContent = 'Total : ' + calcTotal + ' cookies';
   ulEl.appendChild(liEl);
 };
@@ -179,19 +186,22 @@ minnesotaBond.render = function (){
 
   this.cookieCalculator();
   var calcTotal = 0;
+  var liEl = document.createElement('li');
 
   for (var i = 0; i < this.cookiesPHour.length; i++) {
-    var liEl = document.createElement('li');
+    liEl = document.createElement('li');
     if (i < 7){
       liEl.textContent = (i + 6) + ' am : ' + this.cookiesPHour[i] + ' cookies';
-    } else (liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies');
+    }else {
+      liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies';
+    }
     ulEl.appendChild(liEl);
 
     // //calculate the total cookies
     calcTotal = parseInt(this.cookiesPHour[i]) + calcTotal;
   }
-  
   //append total cookies
+  liEl = document.createElement('li');
   liEl.textContent = 'Total : ' + calcTotal + ' cookies';
   ulEl.appendChild(liEl);
 };
@@ -207,19 +217,22 @@ neffWilliamson.render = function (){
 
   this.cookieCalculator();
   var calcTotal = 0;
+  var liEl = document.createElement('li');
 
   for (var i = 0; i < this.cookiesPHour.length; i++) {
-    var liEl = document.createElement('li');
+    liEl = document.createElement('li');
     if (i < 7){
       liEl.textContent = (i + 6) + ' am : ' + this.cookiesPHour[i] + ' cookies';
-    } else (liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies');
+    }else {
+      liEl.textContent = (i - 6) + ' pm : ' + this.cookiesPHour[i] + ' cookies';
+    }
     ulEl.appendChild(liEl);
 
     // //calculate the total cookies
     calcTotal = parseInt(this.cookiesPHour[i]) + calcTotal;
   }
-  
   //append total cookies
+  liEl = document.createElement('li');
   liEl.textContent = 'Total : ' + calcTotal + ' cookies';
   ulEl.appendChild(liEl);
 };
