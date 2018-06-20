@@ -39,8 +39,32 @@ new Stand('Fresno and 14th', 11, 38, 3.7);
 new Stand('Minnesota and Bond', 20, 38, 2.3);
 new Stand('Neff and Williamson', 2, 16, 4.6);
 
-//Form for adding new Stand instances
+/********************************************************************************
+ *         Form for adding new stand instances                                   *
+ ********************************************************************************/
 
+//Global variables for DOM
+var newStandNode = document.getElementById('newStandNode');
+
+//Event listener for submit
+newStandNode.addEventListener('submit', handleNewStandSubmit);
+
+//Event handler for submit
+function handleNewStandSubmit(event){
+  event.preventDefault();
+  
+  var formNewStand = event.target.stand.value;
+  var formMinCustomer = event.target.formMinCust.value;
+  var formMaxCustomer = event.target.formMaxCust.value;
+  var formAverageSale = event.target.formAvgSale.value;
+
+  //create new instance
+  new Stand(formNewStand, formMinCustomer, formMaxCustomer, formAverageSale);
+
+  salmonCookieStands.innerHTML = '';
+  createHeaderRow();
+  renderAll();
+}
 
 //Stand cookies per customer with random number
 Stand.prototype.calcCookiesPCustomer = function () {
@@ -118,5 +142,3 @@ var renderAll = function () {
 };
 
 renderAll();
-
-event.preventDefault();
