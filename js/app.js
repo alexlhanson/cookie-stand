@@ -45,7 +45,7 @@ Stand.prototype.calcCookiesPHour = function () {
 
 //Append Data to Page
 
-Stand.prototype.renderDataRows = function () {
+Stand.prototype.renderDataRow = function () {
   this.calcCookiesPHour();
   
   var trEl = document.createElement('tr');
@@ -158,7 +158,7 @@ var subtotal = function () {
 var renderAll = function () {
   var grandTotal = 0;
   for (var stand in stands) {
-    stands[stand].renderDataRows();
+    stands[stand].renderDataRow();
     grandTotal += stands[stand].cookiesTotal;
   };
 
