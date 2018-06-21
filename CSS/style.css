@@ -63,12 +63,16 @@ footer {
 
 footer section {
   float: left;
-  margin: 0 10% 0 10%;
+  margin: 0 7% 0 7%;
 }
 
 footer p {
   font-size: 1em;
   line-height: 0.25em;
+}
+
+main article:last-of-type {
+  margin-bottom: 3em;
 }
 
 /********************************************************************************
