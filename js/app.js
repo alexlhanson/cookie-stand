@@ -22,7 +22,7 @@ function Stand(name, minCust, maxCust, avgPSales) {
   this.cookiesPCustomer = [];
   this.cookiesPHour = [];
   this.cookiesTotal = 0;
-  this.hours = ['6 am', '7 am', '8 am', '9 am', '10 am', '11 am', '12 pm', '1 pm', '2 pm', '3 pm', '4 pm', '5 pm', '6 pm', '7 pm', '8 pm'];
+  this.hours = baseHours;
   
   stands.push(this);
 }
@@ -42,7 +42,6 @@ Stand.prototype.calcCookiesPHour = function () {
     this.cookiesTotal = this.cookiesTotal + this.cookiesPHour[i];
   }
 };
-
 
 //Append Data to Page
 
@@ -92,16 +91,28 @@ function handleNewStandSubmit(event){
   event.preventDefault();
   
   var formNewStand = event.target.stand.value;
-  var formMinCustomer = event.target.formMinCust.value;
-  var formMaxCustomer = event.target.formMaxCust.value;
-  var formAverageSale = event.target.formAvgSale.value;
+  var formMinCustomer = parseInt(event.target.formMinCust.value);
+  var formMaxCustomer = parseInt(event.target.formMaxCust.value);
+  var formAverageSale = parseFloat(event.target.formAvgSale.value);
+
+  //validation
+  
+  if(!event.target.stand.value || !event.target.formMinCust.value || !event.target.formMaxCust.value || !event.target.formAvgSale.value){
+    return alert ('All fields must be completed');
+  }
 
   //create new instance
   new Stand(formNewStand, formMinCustomer, formMaxCustomer, formAverageSale);
-
+  
   salmonCookieStands.innerHTML = '';
   createHeaderRow();
   renderAll();
+
+  //reset form
+  event.target.stand.value = null;
+  event.target.formMinCust.value = null;
+  event.target.formMaxCust.value = null;
+  event.target.formAvgSale.value = null;
 }
 
 /********************************************************************************
@@ -153,21 +164,23 @@ var renderAll = function () {
 
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
-
+  
   var thEl = document.createElement('th');
   thEl.textContent = 'Subtotal';
   trEl.appendChild(thEl);
-
+  
   subtotal();
-  console.log(subtotals);
+  
   for (var hour in subtotals){
     tdEl = document.createElement('td');
     tdEl.textContent = subtotals[hour];
+    tdEl.className = 'subTotal';
     trEl.appendChild(tdEl);
   }
 
   tdEl = document.createElement('td');
-  tdEl.className = 'grandTotal';
+  tdEl.setAttribute('id', 'grandTotal');
+
   tdEl.textContent = grandTotal;
   trEl.appendChild(tdEl);
 
