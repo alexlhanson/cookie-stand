@@ -1,15 +1,10 @@
 /********************************************************************************
-*          Global-level                                                  *
-********************************************************************************/
-
-body {
-  background-color: #DDC79C;
-  margin: 0;
-}
-
-/********************************************************************************
 *          Element-Level                                                        *
 ********************************************************************************/
+body {
+  margin: 0;
+  background-color: #DDC79C;
+}
 li table fieldset{
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -20,7 +15,7 @@ h1 h2 p {
 }
 
 p {
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 
 h1 {
@@ -55,10 +50,31 @@ label {
   display: block
 }
 
-fieldset {
-  margin-top: 5em;
-  display: inline-block;
+main {
+  max-width: 960px;
+  margin: auto;
 }
+
+footer {
+  background-color: #FCC0C0;
+  height: 200px;
+  clear:both;
+}
+
+footer section {
+  float: left;
+  margin: 0 7% 0 7%;
+}
+
+footer p {
+  font-size: 1em;
+  line-height: 0.25em;
+}
+
+main article:last-of-type {
+  margin-bottom: 3em;
+}
+
 /********************************************************************************
 *          ID/Class/Specific                                                    *
 ********************************************************************************/
@@ -88,12 +104,6 @@ li>a {
   text-decoration: none;
 }
 
-.main {
-  max-width: 960px;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
 #salmonCookieStands th {
   background-color: #FC8B8B;
   color:white;
@@ -116,6 +126,7 @@ tr>th:first-of-type {
   margin: 0 1.5em 0 1.5em;
 }
 
+
 /********************************************************************************
 *          Images                                                               *
 ********************************************************************************/
@@ -123,20 +134,39 @@ tr>th:first-of-type {
 .salmon {
   float:left;
   max-height: 1.5em;
+  margin-left: 3em;
+}
+
+.chinook {
+  float:right;
+  max-height: 1.5em; 
+  margin-right: 3em;
 }
 
 .logo {
   margin-bottom: 0px;
 }
 
+main img {
+  float:left;
+  width: 35%;
+  margin-right: 2em;
+}
+
+#futureUs img {
+  float: right;
+}
+
 /********************************************************************************
 *          Forms                                                                *
 ********************************************************************************/
-
 fieldset {
+  margin-top: 5em;
+  display: inline-block;
   background-color: #BB7B28;
   border: 3px solid black;
   border-radius: 30px;
+  margin-bottom: 30px;
 }
 
 legend {
