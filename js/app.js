@@ -43,7 +43,6 @@ Stand.prototype.calcCookiesPHour = function () {
   }
 };
 
-
 //Append Data to Page
 
 Stand.prototype.renderDataRows = function () {
@@ -92,9 +91,9 @@ function handleNewStandSubmit(event){
   event.preventDefault();
   
   var formNewStand = event.target.stand.value;
-  var formMinCustomer = event.target.formMinCust.value;
-  var formMaxCustomer = event.target.formMaxCust.value;
-  var formAverageSale = event.target.formAvgSale.value;
+  var formMinCustomer = parseInt(event.target.formMinCust.value);
+  var formMaxCustomer = parseInt(event.target.formMaxCust.value);
+  var formAverageSale = parseFloat(event.target.formAvgSale.value);
 
   //create new instance
   new Stand(formNewStand, formMinCustomer, formMaxCustomer, formAverageSale);
@@ -153,21 +152,23 @@ var renderAll = function () {
 
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
-
+  
   var thEl = document.createElement('th');
   thEl.textContent = 'Subtotal';
   trEl.appendChild(thEl);
-
+  
   subtotal();
-  console.log(subtotals);
+  
   for (var hour in subtotals){
     tdEl = document.createElement('td');
     tdEl.textContent = subtotals[hour];
+    tdEl.className = 'subTotal';
     trEl.appendChild(tdEl);
   }
 
   tdEl = document.createElement('td');
-  tdEl.className = 'grandTotal';
+  tdEl.setAttribute('id', 'grandTotal');
+
   tdEl.textContent = grandTotal;
   trEl.appendChild(tdEl);
 

@@ -1,8 +1,15 @@
+/********************************************************************************
+*          Global-level                                                  *
+********************************************************************************/
+
 body {
-  background-color: #D0C9C2;
+  background-color: #DDC79C;
   margin: 0;
 }
 
+/********************************************************************************
+*          Element-Level                                                        *
+********************************************************************************/
 li{
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -26,10 +33,14 @@ header {
 
 table {
   border: 3px solid black;
+  background-color: white;
+  border-collapse: collapse;
 }
 
-td th {
+td {
   border: 1px solid black;
+  background-color: white;
+  padding: 0 1em 0 1em;
 }
 
 label { 
@@ -41,8 +52,11 @@ fieldset {
   display: inline-block;
 }
 
+/********************************************************************************
+*          ID/Class/Specific                                                    *
+********************************************************************************/
 .navbar {
-  background-color: #C6915D;
+  background-color: #BB7B28;
 }
 
 .navbar>li {
@@ -55,17 +69,31 @@ fieldset {
 
 .main {
   max-width: 960px;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #salmonCookieStands th {
-  background-color: #A46845;
+  background-color: #FC8B8B;
   color:white;
-  border: 1px solid black;
+  border: 1px solid 
 }
 
-/* Images */
+tr :last-child{
+  background-color: #DDC79C;
+}
+
+.subTotal{
+  background-color: #DDC79C;
+}
+
+#grandTotal{
+  background-color: #BB7B28;
+}
+
+/********************************************************************************
+*          Images                                                               *
+********************************************************************************/
 
 .salmon {
   float:left;
