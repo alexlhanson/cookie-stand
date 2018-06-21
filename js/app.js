@@ -23,7 +23,7 @@ function Stand(name, minCust, maxCust, avgPSales) {
   this.cookiesPHour = [];
   this.cookiesTotal = 0;
   this.hours = baseHours;
-  
+
   stands.push(this);
 }
 
@@ -47,25 +47,25 @@ Stand.prototype.calcCookiesPHour = function () {
 
 Stand.prototype.renderDataRow = function () {
   this.calcCookiesPHour();
-  
+
   var trEl = document.createElement('tr');
-  
+
   var tdEl = document.createElement('th');
   tdEl.textContent = this.name;
   trEl.appendChild(tdEl);
-  
+
   for (var hour in this.cookiesPHour) {
     tdEl = document.createElement('td');
     tdEl.textContent = this.cookiesPHour[hour];
     trEl.appendChild(tdEl);
   }
-  
+
   tdEl = document.createElement('td');
   tdEl.textContent = this.cookiesTotal;
   trEl.appendChild(tdEl);
-  
+
   trEl.appendChild(tdEl);
-  
+
   //append the header row
   standsSection.appendChild(trEl);
 };
@@ -87,32 +87,43 @@ var newStandNode = document.getElementById('newStandNode');
 newStandNode.addEventListener('submit', handleNewStandSubmit);
 
 //Event handler for submit
-function handleNewStandSubmit(event){
+function handleNewStandSubmit(event) {
   event.preventDefault();
-  
+
   var formNewStand = event.target.stand.value;
   var formMinCustomer = parseInt(event.target.formMinCust.value);
   var formMaxCustomer = parseInt(event.target.formMaxCust.value);
   var formAverageSale = parseFloat(event.target.formAvgSale.value);
 
   //validation
-  
-  if(!event.target.stand.value || !event.target.formMinCust.value || !event.target.formMaxCust.value || !event.target.formAvgSale.value){
-    return alert ('All fields must be completed');
-  }
 
-  //create new instance
-  new Stand(formNewStand, formMinCustomer, formMaxCustomer, formAverageSale);
+  if (!event.target.stand.value || !event.target.formMinCust.value || !event.target.formMaxCust.value || !event.target.formAvgSale.value) {
+    return alert('All fields must be completed');
+  }
+  var exists = checkIfExistsAndUpdate(event);
+
+  if (!exists){
+    //create new instance
+    new Stand(formNewStand, formMinCustomer, formMaxCustomer, formAverageSale);
   
-  salmonCookieStands.innerHTML = '';
-  createHeaderRow();
-  renderAll();
+    salmonCookieStands.innerHTML = '';
+    renderAll();
+  }
 
   //reset form
   event.target.stand.value = null;
   event.target.formMinCust.value = null;
   event.target.formMaxCust.value = null;
   event.target.formAvgSale.value = null;
+}
+
+//helper function for validation
+function checkIfExistsAndUpdate(event){
+  for (var stand in stands){
+    if (event.target.stand.value.toLowerCase() === stands[stand].name.toLowerCase()){
+      return true;
+    }
+  }
 }
 
 /********************************************************************************
@@ -138,12 +149,45 @@ var createHeaderRow = function () {
   thEl = document.createElement('th');
   thEl.textContent = 'Total';
   trEl.appendChild(thEl);
-
+  
   standsSection.appendChild(trEl);
 };
 
-createHeaderRow();
+//Create footer row
 
+var createFooterRow = function () {
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  var tdEl = document.createElement('td');
+  var grandTotal = 0;
+  
+  //Add subtotal horizontal header
+  thEl.textContent = 'Subtotal';
+  trEl.appendChild(thEl);
+  
+  //Create subtotals and append them
+  subtotal();
+  
+  for (var hour in subtotals) {
+    tdEl = document.createElement('td');
+    tdEl.textContent = subtotals[hour];
+    tdEl.className = 'subTotal';
+    trEl.appendChild(tdEl);
+  }
+  
+  tdEl = document.createElement('td');
+  tdEl.setAttribute('id', 'grandTotal');
+  
+  //Create grand total and append
+  for (var stand in stands) {
+    grandTotal += stands[stand].cookiesTotal;
+  }
+
+  tdEl.textContent = grandTotal;
+  trEl.appendChild(tdEl);
+  
+  standsSection.appendChild(trEl);
+};
 
 var subtotal = function () {
   subtotals = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -155,36 +199,17 @@ var subtotal = function () {
   }
 };
 
-var renderAll = function () {
-  var grandTotal = 0;
+var renderDataRows = function () {
   for (var stand in stands) {
     stands[stand].renderDataRow();
-    grandTotal += stands[stand].cookiesTotal;
   };
+};
 
-  var trEl = document.createElement('tr');
-  var tdEl = document.createElement('td');
-  
-  var thEl = document.createElement('th');
-  thEl.textContent = 'Subtotal';
-  trEl.appendChild(thEl);
-  
-  subtotal();
-  
-  for (var hour in subtotals){
-    tdEl = document.createElement('td');
-    tdEl.textContent = subtotals[hour];
-    tdEl.className = 'subTotal';
-    trEl.appendChild(tdEl);
-  }
-
-  tdEl = document.createElement('td');
-  tdEl.setAttribute('id', 'grandTotal');
-
-  tdEl.textContent = grandTotal;
-  trEl.appendChild(tdEl);
-
-  standsSection.appendChild(trEl);
+// Call functions
+var renderAll = function() {
+  createHeaderRow();
+  renderDataRows();
+  createFooterRow();
 };
 
 renderAll();

@@ -59,6 +59,10 @@ fieldset {
   margin-top: 5em;
   display: inline-block;
 }
+main {
+  max-width: 960px;
+  margin: auto;
+}
 /********************************************************************************
 *          ID/Class/Specific                                                    *
 ********************************************************************************/
@@ -88,11 +92,6 @@ li>a {
   text-decoration: none;
 }
 
-.main {
-  max-width: 960px;
-  margin-left: 10%;
-  margin-right: 10%;
-}
 
 #salmonCookieStands th {
   background-color: #FC8B8B;
@@ -123,12 +122,24 @@ tr>th:first-of-type {
 .salmon {
   float:left;
   max-height: 1.5em;
+  margin-left: 3em;
+}
+
+.chinook {
+  float:right;
+  max-height: 1.5em; 
+  margin-right: 3em;
 }
 
 .logo {
   margin-bottom: 0px;
 }
 
+main img {
+  float:left;
+  width: 35%;
+  margin-right: 2em;
+}
 /********************************************************************************
 *          Forms                                                                *
 ********************************************************************************/
