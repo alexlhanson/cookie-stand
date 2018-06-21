@@ -1,15 +1,10 @@
 /********************************************************************************
-*          Global-level                                                  *
+*          Element-Level                                                        *
 ********************************************************************************/
-
 body {
   background-color: #DDC79C;
   margin: 0;
 }
-
-/********************************************************************************
-*          Element-Level                                                        *
-********************************************************************************/
 li table fieldset{
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -55,14 +50,15 @@ label {
   display: block
 }
 
-fieldset {
-  margin-top: 5em;
-  display: inline-block;
-}
 main {
   max-width: 960px;
   margin: auto;
 }
+
+footer {
+  background-color: #FCC0C0
+}
+
 /********************************************************************************
 *          ID/Class/Specific                                                    *
 ********************************************************************************/
@@ -91,7 +87,6 @@ main {
 li>a {
   text-decoration: none;
 }
-
 
 #salmonCookieStands th {
   background-color: #FC8B8B;
@@ -143,11 +138,13 @@ main img {
 /********************************************************************************
 *          Forms                                                                *
 ********************************************************************************/
-
 fieldset {
+  margin-top: 5em;
+  display: inline-block;
   background-color: #BB7B28;
   border: 3px solid black;
   border-radius: 30px;
+  margin-bottom: 30px;
 }
 
 legend {
