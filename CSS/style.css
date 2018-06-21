@@ -2,8 +2,8 @@
 *          Element-Level                                                        *
 ********************************************************************************/
 body {
-  background-color: #DDC79C;
   margin: 0;
+  background-color: #DDC79C;
 }
 li table fieldset{
   font-family: Arial, Helvetica, sans-serif;
@@ -15,7 +15,7 @@ h1 h2 p {
 }
 
 p {
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 
 h1 {
@@ -56,7 +56,19 @@ main {
 }
 
 footer {
-  background-color: #FCC0C0
+  background-color: #FCC0C0;
+  height: 200px;
+  clear:both;
+}
+
+footer section {
+  float: left;
+  margin: 0 10% 0 10%;
+}
+
+footer p {
+  font-size: 1em;
+  line-height: 0.25em;
 }
 
 /********************************************************************************
@@ -110,6 +122,7 @@ tr>th:first-of-type {
   margin: 0 1.5em 0 1.5em;
 }
 
+
 /********************************************************************************
 *          Images                                                               *
 ********************************************************************************/
@@ -135,6 +148,11 @@ main img {
   width: 35%;
   margin-right: 2em;
 }
+
+#futureUs img {
+  float: right;
+}
+
 /********************************************************************************
 *          Forms                                                                *
 ********************************************************************************/
