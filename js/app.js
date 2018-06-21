@@ -95,12 +95,24 @@ function handleNewStandSubmit(event){
   var formMaxCustomer = parseInt(event.target.formMaxCust.value);
   var formAverageSale = parseFloat(event.target.formAvgSale.value);
 
+  //validation
+  
+  if(!event.target.stand.value || !event.target.formMinCust.value || !event.target.formMaxCust.value || !event.target.formAvgSale.value){
+    return alert ('All fields must be completed');
+  }
+
   //create new instance
   new Stand(formNewStand, formMinCustomer, formMaxCustomer, formAverageSale);
-
+  
   salmonCookieStands.innerHTML = '';
   createHeaderRow();
   renderAll();
+
+  //reset form
+  event.target.stand.value = null;
+  event.target.formMinCust.value = null;
+  event.target.formMaxCust.value = null;
+  event.target.formAvgSale.value = null;
 }
 
 /********************************************************************************
