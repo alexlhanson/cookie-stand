@@ -1,21 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Salmon Cookie Sales</title>
   <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
+
 <body>
+  <header>
 
-  <h1>sales</h1>
+    <div class="logo">
+      <img src="images/pats_logo.png" alt="salmon picture" title="Salmon Logo">
+    </div>
 
-  <section>
-    <table id="salmonCookieStands"></table>
-  </section>
+    <nav>
+      <ul class="navbar">
+        <img src="images/salmon.png" alt="salmon picture" title="Salmon Logo" class="salmon">
+        <li><a href="index.html">About</a></li>
+        <li><a href="stylesheet.html">Style</a></li>
+        <li>
+          <a href="sales.html">Sales</a>
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <div class="main">
+    
+    <h1>Sales by Cookie Stand</h1>
+  
+    <section>
+      <table id="salmonCookieStands"></table>
+    </section>
+    <form id="newStandNode">
+      
+      <fieldset id="formFieldset">
+        <legend id="formLegend">Add additional stand locations</legend>
+
+          <label for="stand">Cross-streets for the new stand</label>
+          <input name="stand" type="text"/>
+
+          <label for="formMinCust">Smallest number of customers each hour</label>
+          <input name="formMinCust" type="number"/>
+
+          <label for="formMaxCust">Largest number of customers each hour</label>
+          <input name="formMaxCust" type="number"/>
+
+          <label for="formAvgSale">Average number of cookies for each customer</label>
+          <input name="formAvgSale" type="number"/>
+
+          <button type="submit">Add Stand</button>
+
+      </fieldset>
+
+    </form>
+
+  </div>
 
   <script src="js/app.js"></script>
-  
+
 </body>
+
 </html>

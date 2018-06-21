@@ -1,9 +1,16 @@
+/********************************************************************************
+*          Global-level                                                  *
+********************************************************************************/
+
 body {
-  background-color: #D0C9C2;
+  background-color: #DDC79C;
   margin: 0;
 }
 
-li{
+/********************************************************************************
+*          Element-Level                                                        *
+********************************************************************************/
+li table fieldset{
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -12,8 +19,13 @@ h1 h2 p {
   text-align: center;
 }
 
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
 header {
-  background-color: #C6915D;
+  background-color:white;
   margin: 0px;
   margin: auto;
   text-align: center;
@@ -21,33 +33,168 @@ header {
 
 table {
   border: 3px solid black;
+  background-color: white;
+  border-collapse: collapse;
 }
 
-td th {
+td {
   border: 1px solid black;
+  background-color: white;
+  padding: 0 1em 0 1em;
 }
 
-#navbar {
-  background-color: #A46845;
+th {
+  background-color: #FC8B8B;
 }
 
-#navbar>li {
+label { 
+  display: block
+}
+
+fieldset {
+  margin-top: 5em;
+  display: inline-block;
+}
+/********************************************************************************
+*          ID/Class/Specific                                                    *
+********************************************************************************/
+
+.navbar {
+  background-color: #BB7B28;
+  padding: 0.75em 0em 0.75em 0em;
+  
+}
+
+.navbar>li:hover {
+  background-color:#DDC79C
+}
+
+.navbar>li {
   display: inline;
   list-style-type: none;
   font-family: 'Oswald', sans-serif;
   font-size: 1.5em;
-  margin-left: 1.5em;
-  margin-right: 1.5em;
+  margin: 1.5em 2.5em 0em 2.5em;
+  background-color:white;
+  padding: 0.1em 1em 0.1em 1em;
+  border-radius: 5px;
 }
 
-#main {
+li>a {
+  text-decoration: none;
+}
+
+.main {
   max-width: 960px;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #salmonCookieStands th {
-  background-color: #A46845;
+  background-color: #FC8B8B;
   color:white;
-  border: 1px solid black;
+  border: 1px solid 
 }
+
+tr :last-child{
+  background-color: #DDC79C;
+}
+
+.subTotal{
+  background-color: #DDC79C;
+}
+
+#grandTotal{
+  background-color: #BB7B28;
+}
+
+tr>th:first-of-type {
+  margin: 0 1.5em 0 1.5em;
+}
+
+/********************************************************************************
+*          Images                                                               *
+********************************************************************************/
+
+.salmon {
+  float:left;
+  max-height: 1.5em;
+}
+
+.logo {
+  margin-bottom: 0px;
+}
+
+/********************************************************************************
+*          Forms                                                                *
+********************************************************************************/
+
+fieldset {
+  background-color: #BB7B28;
+  border: 3px solid black;
+  border-radius: 30px;
+}
+
+legend {
+  font-size: 1.5em;
+  background-color: #FC8B8B;
+  border-radius: 25px;
+  padding: .5em .5em .5em .5em;
+}
+
+button {
+  background-color: #DDC79C;
+  border-radius: 5px;
+}
+
+/********************************************************************************
+*          StyleSheet                                                           *
+********************************************************************************/
+#stylesheet {
+  text-align: center;
+  background-color: white;
+}
+
+#styleTable {
+  margin :auto;
+}
+
+#palette> div {
+  display: inline-block;
+  margin: 2em 2em 2em 2em;
+}
+
+#headingRow {
+  background-color: #FC8B8B; 
+}
+
+#color1 {
+  background-color: #DDC79C;
+  border-radius: 6em;
+  padding: 5em 3.5em 5em 3.5em;
+  border: solid black 1px;
+  
+}
+#color2 {
+  background-color: #BB7B28;
+  border-radius: 6em;
+  padding: 5em 3.5em 5em 3.5em;
+  border: solid black 1px;
+}
+#color3 {
+  background-color: #FC8B8B;
+  border-radius: 6em;
+  padding: 5em 3.5em 5em 3.5em;
+  border: solid black 1px;
+}
+#color4 {
+  background-color: #FCC0C0;
+  border-radius: 6em;
+  padding: 5em 3.5em 5em 3.5em;
+  border: solid black 1px;
+}
+#color5 {
+  background-color: #FBFBFB;
+  border-radius: 6em;
+  padding: 5em 3.5em 5em 3.5em;
+  border: solid black 1px;}
