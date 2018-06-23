@@ -53,12 +53,14 @@ label {
 main {
   max-width: 960px;
   margin: auto;
+  position: relative;
 }
 
 footer {
   background-color: #FCC0C0;
-  height: 200px;
   clear:both;
+  position: absolute;
+  width: 100%;
 }
 
 footer section {
